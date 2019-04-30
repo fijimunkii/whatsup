@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/fijimunkii/whatsup#readme",
   "dependencies": {
+    "aws-sdk": "^2.445.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
     "hpp": "^0.2.2",
