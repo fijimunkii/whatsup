@@ -15,6 +15,7 @@ async function whatsup(req, res) {
   html = `
     <html>
     <head>
+      <title>Whats up!</title>
       <meta http-equiv="refresh" content="30">
       <link rel="shortcut icon" href="${favicon}">
       <link rel="apple-touch-icon" href="${favicon}">
