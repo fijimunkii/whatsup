@@ -1,5 +1,6 @@
 const handleError = require('./lib/handle-error');
 const aws = require('./lib/aws');
+const revtimes = require('./lib/revtimes');
 
 module.exports = (req, res) => {
   return whatsup(req,res)
