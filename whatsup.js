@@ -12,10 +12,15 @@ async function whatsup(req, res) {
   // build html
   html = `
     <html>
+    <head>
+      <meta http-equiv="refresh" content="30">
+    </head>
     <body>
-    whats up!
-    <br><br>
-    ${ await aws.toString() }
+      whats up!
+      <br><br>
+      ${ await revtimes.toString() }
+      <br><br>
+      ${ await aws.toString() }
     </body>
     </html>
   `;
