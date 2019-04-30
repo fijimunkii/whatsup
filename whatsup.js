@@ -1,4 +1,5 @@
 const handleError = require('./lib/handle-error');
+const aws = require('./lib/aws');
 
 module.exports = (req, res) => {
   return whatsup(req,res)
@@ -12,6 +13,8 @@ async function whatsup(req, res) {
     <html>
     <body>
     whats up!
+    <br><br>
+    ${ await aws.toString() }
     </body>
     </html>
   `;
