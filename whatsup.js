@@ -1,6 +1,6 @@
 const handleError = require('./lib/handle-error');
 const aws = require('./lib/aws');
-const revtimes = require('./lib/revtimes');
+const revdates = require('./lib/revdates');
 
 const favicon = 'https://github.githubassets.com/images/icons/emoji/shipit.png';
 
@@ -23,7 +23,7 @@ async function whatsup(req, res) {
     <body>
       whats up!
       <br><br>
-      ${ await revtimes.toString() }
+      ${ await revdates.toString() }
       <br><br>
       ${ await aws.toString() }
     </body>
