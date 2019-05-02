@@ -10,6 +10,7 @@ module.exports = (req, res) => {
 };
 
 async function whatsup(req, res) {
+  const inverted = req.query && req.query.inverted;
   let html;
   // build html
   html = `
@@ -19,12 +20,20 @@ async function whatsup(req, res) {
       <meta http-equiv="refresh" content="30">
       <link rel="shortcut icon" href="${favicon}">
       <link rel="apple-touch-icon" href="${favicon}">
+      <style>
+        html { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
+        .largefont u, .largefont table { font-size: 150%; }
+        ${ inverted ? '.inverted {  filter: invert(100%); }' : '' }
+        .row { display: flex; }
+        .column { flex: 50%; }
+      </style>
     </head>
     <body>
       whats up!
       <br><br>
-      ${ await revdates.toString() }
-      <br><br>
+      <div class="largefont">
+        ${ await revdates.toString() }
+      </div>
       ${ await aws.toString() }
     </body>
     </html>
