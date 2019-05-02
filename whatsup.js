@@ -22,14 +22,18 @@ async function whatsup(req, res) {
       <link rel="apple-touch-icon" href="${favicon}">
       <style>
         html { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
-        html, table { font-size: 150%; }
+        .largefont u, .largefont table { font-size: 150%; }
         ${ inverted ? '.inverted {  filter: invert(100%); }' : '' }
+        .row { display: flex; }
+        .column { flex: 50%; }
       </style>
     </head>
     <body>
       whats up!
       <br><br>
-      ${ await revdates.toString() }
+      <div class="largefont">
+        ${ await revdates.toString() }
+      </div>
       ${ await aws.toString() }
     </body>
     </html>
