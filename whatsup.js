@@ -1,6 +1,7 @@
 const handleError = require('./lib/handle-error');
 const aws = require('./lib/aws');
 const revdates = require('./lib/revdates');
+const css = require('./lib/css');
 
 const favicon = 'https://github.githubassets.com/images/icons/emoji/shipit.png';
 
@@ -21,11 +22,8 @@ async function whatsup(req, res) {
       <link rel="shortcut icon" href="${favicon}">
       <link rel="apple-touch-icon" href="${favicon}">
       <style>
-        html { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
-        .largefont u, .largefont table { font-size: 150%; }
         ${ inverted ? '.inverted {  filter: invert(100%); }' : '' }
-        .row { display: flex; }
-        .column { flex: 50%; }
+        ${ css }
       </style>
     </head>
     <body>
