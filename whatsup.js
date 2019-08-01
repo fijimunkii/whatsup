@@ -25,6 +25,12 @@ async function whatsup(req, res) {
         ${ inverted ? '.inverted {  filter: invert(100%); }' : '' }
         ${ css }
       </style>
+      <script>
+        function showHide(id) {
+          var e = document.getElementById(id);
+          e.style.display = (e.style.display == 'block') ? 'none' : 'block';
+        }
+      </script>
     </head>
     <body>
       whats up!
