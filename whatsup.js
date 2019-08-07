@@ -2,6 +2,7 @@ const handleError = require('./lib/handle-error');
 const aws = require('./lib/aws');
 const revdates = require('./lib/revdates');
 const css = require('./lib/css');
+const miscScripts = require('./lib/misc-scripts');
 
 const favicon = 'https://github.githubassets.com/images/icons/emoji/shipit.png';
 
@@ -26,10 +27,7 @@ async function whatsup(req, res) {
         ${ css }
       </style>
       <script>
-        function showHide(id) {
-          var e = document.getElementById(id);
-          e.style.display = (e.style.display == 'block') ? 'none' : 'block';
-        }
+        ${ miscScripts }
       </script>
     </head>
     <body>
