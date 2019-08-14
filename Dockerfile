@@ -14,4 +14,4 @@ WORKDIR /root
 RUN npm i && npm i -g pm2
 
 CMD bash sync_config.sh \
-  && pm2 start index.js --name whatsup --no-daemon
+  && pm2 start index.js --name whatsup --no-daemon --wait-ready
