@@ -15,3 +15,6 @@ RUN npm i && npm i -g pm2
 
 CMD bash sync_config.sh \
   && pm2 start index.js --name whatsup --no-daemon --wait-ready
+
+HEALTHCHECK --interval=5m --timeout=3s \
+  CMD curl -f http://localhost:5555/ || exit 1
