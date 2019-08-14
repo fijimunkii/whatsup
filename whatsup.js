@@ -34,9 +34,9 @@ async function whatsup(req, res) {
       whats up!
       <br><br>
       <div class="largefont">
-        ${ await revdates.toString() }
+        ${ await revdates.toString().catch(err => err) }
       </div>
-      ${ await aws.toString() }
+      ${ await aws.toString().catch(err => err) }
     </body>
     </html>
   `;
