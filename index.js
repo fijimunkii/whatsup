@@ -15,4 +15,9 @@ if (env.get('HTTPS')) {
 }
 
 const port = env.get('PORT')||5555;
-app.listen(port, () => console.log(`Listening at http://localhost:${port}`));
+app.listen(port, () => {
+  if (typeof process.send === 'function') {
+    process.send('ready'); // signal ready for `pm2 start index.js --wait-ready`
+  }
+  console.log(`Listening at http://localhost:${port}`);
+});
