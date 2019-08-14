@@ -1,0 +1,13 @@
+version: "3.2"
+services:
+  whatsup:
+    image: fijimunkii/whatsup:latest
+    container_name: whatsup
+    environment:
+      - 'HTTPS=true'
+      - 'S3_BUCKET=whatsup-myapp'
+    restart: always
+    ports:
+      - target: 5555
+        published: 443
+        protocol: tcp
